@@ -1,0 +1,119 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.jumbotron {
+    background-color: white;
+    padding: 40px;
+    margin: 80px;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.jumbotron h1 {
+    color: #63A583;
+}
+
+.jumbotron hr {
+    border: 1px #C4C4C4 solid;
+    border-width: thin;
+}
+
+.jumbotron p {
+    color: #97CDB1;
+    padding: 5px;
+}
+
+.jumbotron button {
+    background-color: #63A583;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 60px 10px 60px;
+}
+
+.blob {
+    position: relative;
+    z-index: -1;
+    bottom: 140px;
+}
+
+.white-circle {
+    position: relative;
+    z-index: 1;
+    bottom: 800px;
+    right: 400px;
+}
+
+.green-circle {
+    position: relative;
+    z-index: 0;
+    bottom: 900px;
+    right: 170px;
+}
+.form-container {
+    width: 25%;
+}
+
+.signup-form {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    bottom: 1600px;
+    left: 900px;
+    border-radius: 10px;
+    height: 541px;
+    width: 450px;
+    padding: 20px;
+}
+
+.label {
+    color: #63A583;
+    font-size: 24px;
+}
+
+.input-box {
+    border: 1px #63A583 solid;
+    border-radius: 10px;
+    width: 80%;
+    height: 38px;
+    margin: 10px;
+}
+
+.signup-btn {
+    margin: 20px;
+    padding: 10px 30px 10px 30px;
+    background-color: #63A583;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+.google-hr {
+    border: 1px #63A583 solid;
+    width: 65%; 
+}
+
+.google-btn {
+    background-color: white;
+    color: #63A583;
+    border: 1px #63A583 solid;
+    border-radius: 10px;
+    padding: 10px 60px 10px 60px;
+    margin: 10px;
+}
+
+.quote-container {
+    width: 25%;
+}
+
+.quote {
+    position: relative;
+    bottom: 1450px;
+    background-color: #4477DC;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    left: 933px;
+}
