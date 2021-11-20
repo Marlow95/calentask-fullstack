@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import '../css/nav.css'
 
 function Nav(){
@@ -7,16 +8,16 @@ function Nav(){
             <img src="./images/Calen-Task.png" alt="logo" width="150" height="20" style={logoStyles}/>
             <ul>
                 <li className="list">
-                    <a>Home |</a>
+                    <Link className="link" to="/">Home |</ Link>
                 </li>
                 <li className="list">
-                    <a>Tasks |</a>
+                    <Link className="link" to="/tasks">Tasks |</ Link>
                 </li>
                 <li className="list">
-                    <a>How-To |</a>
+                    <Link className="link" to="/how-to">How To |</ Link>
                 </li>
                 <li className="list">
-                    <a>About </a>
+                    <Link className="link" to="/about">About </ Link>
                 </li>
             </ul>
             <button style={btnStyles}>Login</button>
@@ -44,8 +45,7 @@ const btnStyles = {
     padding: '0px 15px 0px 15px',
     margin: '10px',
     border: 'none',
-    borderRadius: '10px',
-    fontSize: '20px'
+    borderRadius: '10px'
 }
 
 export default Nav 

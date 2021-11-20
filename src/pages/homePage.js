@@ -12,13 +12,13 @@ function HomePage(){
                     <button>Learn More</button>
                 </div>
             </div>
-            <div>
+            <div className="blob-container">
                 <img className="blob" src="/images/Blob.png" alt="blob"/>
             </div>
-            <div>
+            <div className="circle-container">
                 <img className="white-circle" src="/images/White Circle.png" alt="white-circle-graphic"/>
             </div>
-            <div>
+            <div className="circle-container">
                 <img className="green-circle" src="/images/Green Circle.png" alt="green-circle-graphic"/>
             </div>
             <div className="form-container">
@@ -41,13 +41,15 @@ function HomePage(){
                     <br />
                     <input type="submit" value="Sign Up" className="signup-btn" />
                     <hr className="google-hr"/>
-                    <button className="google-btn"><i className="google-icon" src="/images/google.png" alt="google"/>Sign Up w/ Google</button>
+                    <button className="google-btn"><img className="google-icon" src="/images/google-icon.png" alt="google"/>Sign Up w/ Google</button>
                 </form>
             </div>
             <div className="quote-container">
                 <div className="quote">
-                    <q>Calen Task has helped me manage my heptic schedule  as a Housing Locator</q>
-                    <p>-Lisa Mason</p>
+                    <blockquote>
+                        <q><em>Calen Task has helped me manage my heptic schedule  as a Housing Locator</em></q>
+                        <p>-Lisa Mason</p>
+                    </blockquote>
                 </div>
             </div>
         </div>
