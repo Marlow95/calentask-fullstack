@@ -31,7 +31,6 @@ function footer(){
 
 const footerStyles = {
     position: 'relative',
-    top: '1000px',
     backgroundColor: '#4477DC',
     color: 'white',
     fontSize: '18px',
