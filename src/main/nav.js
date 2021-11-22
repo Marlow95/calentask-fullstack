@@ -28,14 +28,14 @@ const navStyles = {
     backgroundColor: 'white',
     color: '#63A583',
     display: 'flex',
-    justifyContent: 'space-around',
     fontFamily: 'SeoulHangang',
-    fontSize: '18px'
+    fontSize: '18px',
+    justifyContent: 'space-around',
 }
 
 const logoStyles = {
-    padding: '5px',
-    marginTop: '9px'
+    marginTop: '9px',
+    padding: '5px'
 }
 
 const navList = {
@@ -44,17 +44,17 @@ const navList = {
 }
 
 const navLink = {
-    textDecoration: 'none',
-    color: '#63A583'
+    color: '#63A583',
+    textDecoration: 'none'
 }
 
 const loginModalStyles = {
     backgroundColor: '#63A583',
-    color: 'white',
-    padding: '0px 15px 0px 15px',
-    margin: '10px',
     border: 'none',
-    borderRadius: '10px'
+    borderRadius: '10px',
+    color: 'white',
+    margin: '10px',
+    padding: '0px 15px 0px 15px'
 }
 
 export default Nav 

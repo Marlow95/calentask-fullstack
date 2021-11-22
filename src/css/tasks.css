@@ -1,0 +1,2 @@
+/*.CSS should be used on complex css pages or pages commonly changed. All classnames should be specific to avoid css collisions and side effects. 
+All of the .CSS pages are linked so a classname on one page can affect another if its the same. For regular pages consider styled components */

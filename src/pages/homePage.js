@@ -41,7 +41,10 @@ function HomePage(){
                     <br />
                     <input type="submit" value="Sign Up" className="signup-btn" />
                     <hr className="google-hr"/>
-                    <button className="google-btn"><img className="google-icon" src="/images/google-icon.png" alt="google"/>Sign Up w/ Google</button>
+                    <button className="google-btn">
+                        <img className="google-icon" src="/images/google-icon.png" alt="google"/>
+                        <span>Sign Up w/ Google</span>
+                    </button>
                 </form>
             </div>
             <div className="quote-container">

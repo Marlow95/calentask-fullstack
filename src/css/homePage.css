@@ -7,15 +7,15 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 
 .jumbotron-container {
     display: flex;
-    justify-content: center;
     height: fit-content;
+    justify-content: center;
 }
 
 .jumbotron {
     background-color: white;
-    padding: 40px;
-    margin: 80px;
     border-radius: 10px;
+    margin: 80px;
+    padding: 40px;
     width: 60%;
 }
 
@@ -35,9 +35,9 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 
 .jumbotron button {
     background-color: #63A583;
-    color: white;
     border-radius: 10px;
     border: none;
+    color: white;
     padding: 10px 60px 10px 60px;
 }
 
@@ -46,9 +46,9 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 }
 
 .blob {
+    bottom: 8.75rem;
     position: relative;
     z-index: -1;
-    bottom: 8.75rem;
 }
 
 .circle-container{
@@ -57,30 +57,30 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 
 .white-circle {
     position: relative;
-    z-index: 1;
-    top: 5rem;
     right: 22rem;
+    top: 5rem;
+    z-index: 1;
 }
 
 .green-circle {
     position: relative;
-    z-index: 0;
-    top: 20rem;
     right: 5rem;
+    top: 20rem;
+    z-index: 0;
 }
 .form-container {
-    width: 25%;
     height:0;
+    width: 25%;
 }
 
 .signup-form {
-    position: relative;
-    z-index: 1;
     background-color: white;
-    left: 63rem;
     border-radius: 10px;
     height: 541px;
+    left: 63rem;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .label {
@@ -89,20 +89,20 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 }
 
 .input-box {
-    border: 1px #63A583 solid;
     border-radius: 10px;
-    width: 80%;
+    border: 1px #63A583 solid;
     height: 38px;
     margin: 10px;
+    width: 80%;
 }
 
 .signup-btn {
-    margin: 20px;
-    padding: 10px 30px 10px 30px;
     background-color: #63A583;
     border-radius: 10px;
     border: none;
     color: white;
+    margin: 20px;
+    padding: 10px 30px 10px 30px;
 }
 
 .google-hr {
@@ -112,24 +112,30 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 
 .google-btn {
     background-color: white;
-    color: #63A583;
-    border: 1px #63A583 solid;
     border-radius: 10px;
-    padding: 10px 60px 10px 60px;
+    border: 1px #63A583 solid;
+    color: #63A583;
     margin: 10px;
+    padding: 10px 60px 10px 60px;
+}
+
+.google-btn span{
+    position: relative;
+    bottom: 0.4rem;
+    padding: 8px;
 }
 
 .quote-container {
-    width: 23%;
     height: 0;
+    width: 23%;
 }
 
 .quote {
+    background-color: #4477DC;
+    border-radius: 10px;
+    color: white;
+    left: 63rem;
+    padding: 10px;
     position: relative;
     top: 50rem;
-    background-color: #4477DC;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    left: 63rem;
 }
