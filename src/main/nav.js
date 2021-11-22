@@ -1,26 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import '../css/nav.css'
 
 function Nav(){
     return(
         <nav style={navStyles}>
             <img src="./images/Calen-Task.png" alt="logo" width="150" height="20" style={logoStyles}/>
             <ul>
-                <li className="list">
-                    <Link className="link" to="/">Home |</ Link>
+                <li style={navList}>
+                    <Link style={navLink} to="/">Home |</ Link>
                 </li>
-                <li className="list">
-                    <Link className="link" to="/tasks">Tasks |</ Link>
+                <li style={navList}>
+                    <Link style={navLink} to="/tasks">Tasks |</ Link>
                 </li>
-                <li className="list">
-                    <Link className="link" to="/how-to">How To |</ Link>
+                <li style={navList}>
+                    <Link style={navLink} to="/how-to">How To |</ Link>
                 </li>
-                <li className="list">
-                    <Link className="link" to="/about">About </ Link>
+                <li style={navList}>
+                    <Link style={navLink} to="/about">About </ Link>
                 </li>
             </ul>
-            <button style={btnStyles}>Login</button>
+            <button style={loginModalStyles}>Login</button>
         </nav>
     )
 }
@@ -39,7 +38,17 @@ const logoStyles = {
     marginTop: '9px'
 }
 
-const btnStyles = {
+const navList = {
+    display: 'inline',
+    padding: '5px'
+}
+
+const navLink = {
+    textDecoration: 'none',
+    color: '#63A583'
+}
+
+const loginModalStyles = {
     backgroundColor: '#63A583',
     color: 'white',
     padding: '0px 15px 0px 15px',

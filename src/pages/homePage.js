@@ -4,7 +4,7 @@ import "../css/homePage.css"
 function HomePage(){
     return (
         <div className="content-container">
-            <div className="container">
+            <div className="jumbotron-container">
                 <div className="jumbotron">
                     <h1>Never, Forget That Important Meeting Ever Again!</h1>
                     <hr />

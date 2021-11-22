@@ -1,28 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import "../css/footer.css"
 
 function footer(){
     return (
         <footer style={footerStyles}>
             <ul>
-                <li className="list">
-                    <Link className="link-footer" to="/">Home |</ Link>
+                <li style={footerList}>
+                    <Link style={footerLink} to="/">Home |</ Link>
                 </li>
-                <li className="list">
-                    <Link className="link-footer" to="/tasks">Tasks |</ Link>
+                <li style={footerList}>
+                    <Link style={footerLink} to="/tasks">Tasks |</ Link>
                 </li>
-                <li className="list">
-                    <Link className="link-footer" to="/how-to">How To |</ Link>
+                <li style={footerList}>
+                    <Link style={footerLink} to="/how-to">How To |</ Link>
                 </li>
-                <li className="list">
-                    <Link className="link-footer" to="/about">About |</ Link>
+                <li style={footerList}>
+                    <Link style={footerLink} to="/about">About |</ Link>
                 </li>
-                <li className="list">
-                    <Link className="link-footer" to="/terms-of-service">Terms of Service |</ Link>
+                <li style={footerList}>
+                    <Link style={footerLink} to="/terms-of-service">Terms of Service |</ Link>
                 </li>
-                <li className="list">
-                    <Link className="link-footer" to="/privacy-policy">Privacy Policy </Link>
+                <li style={footerList}>
+                    <Link style={footerLink} to="/privacy-policy">Privacy Policy </Link>
                 </li>
             </ul>
         </footer>
@@ -36,7 +35,17 @@ const footerStyles = {
     fontSize: '18px',
     padding: '10px',
     display: 'flex',
-    flexDirection: 'left'
+    justifyContent: 'left'
+}
+
+const footerList = {
+    display: 'inline',
+    padding: '5px'
+}
+
+const footerLink = {
+    color: 'white',
+    textDecoration: 'none'
 }
 
 export default footer
