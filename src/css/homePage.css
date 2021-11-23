@@ -37,8 +37,12 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     background-color: #63A583;
     border-radius: 10px;
     border: none;
-    color: white;
     padding: 10px 60px 10px 60px;
+}
+
+.jumbotron-link{
+    color: white;
+    text-decoration: none;
 }
 
 .blob-container {
@@ -76,7 +80,7 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 .signup-form {
     background-color: white;
     border-radius: 10px;
-    height: 541px;
+    height: fit-content;
     left: 63rem;
     padding: 20px;
     position: relative;
@@ -88,15 +92,18 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     font-size: 24px;
 }
 
+/*Styles both the login and sign up form*/
 .input-box {
     border-radius: 10px;
     border: 1px #63A583 solid;
     height: 38px;
     margin: 10px;
     width: 80%;
+    padding: 10px;
 }
 
-.signup-btn {
+/*Styles both the login and sign up form*/
+.form-btn {
     background-color: #63A583;
     border-radius: 10px;
     border: none;

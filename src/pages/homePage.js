@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import "../css/homePage.css"
 
 function HomePage(){
@@ -9,7 +10,7 @@ function HomePage(){
                     <h1>Never, Forget That Important Meeting Ever Again!</h1>
                     <hr />
                     <p>Combine your todo list with your Google Calender and your Mobile Phone, so that you can always remember your most important tasks through out the day!</p>
-                    <button>Learn More</button>
+                    <button><Link className="jumbotron-link" to="/about">Learn More</Link></button>
                 </div>
             </div>
             <div className="blob-container">
@@ -39,7 +40,7 @@ function HomePage(){
                     <br />
                     <input type="text" placeholder="Fullname" className="input-box"/>
                     <br />
-                    <input type="submit" value="Sign Up" className="signup-btn" />
+                    <input type="submit" value="Sign Up" className="form-btn" />
                     <hr className="google-hr"/>
                     <button className="google-btn">
                         <img className="google-icon" src="/images/google-icon.png" alt="google"/>
