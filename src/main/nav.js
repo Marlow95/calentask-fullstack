@@ -27,15 +27,15 @@ function Nav(){
                 <h1>Login</h1>
                 <hr />
                 <form>
-                    <label>Username</label>
+                    <label className="label">Username</label>
                     <br />
                     <input className="input-box" type="username" placeholder="Username"/>
                     <br />
-                    <label>Password</label>
+                    <label className="label">Password</label>
                     <br />
                     <input className="input-box" type="password" placeholder="Password"/>
                     <br />
-                    <input className="form-btn" type="submit" value="submit" />
+                    <input className="form-btn" type="submit" value="Login" />
                     <hr className="google-hr" />
                     <button className="google-btn">
                         <img className="google-icon" src="/images/google-icon.png" alt="google"/>

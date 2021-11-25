@@ -8,6 +8,8 @@ import PrivacyPolicy from './pages/privacyPolicy'
 import { Switch, Route} from 'react-router-dom'
 import Footer from './main/footer'
 import './App.css';
+import './css/reusable/page.css'
+import './css/reusable/form.css'
 
 function App() {
   return (

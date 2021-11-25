@@ -1,0 +1,44 @@
+/*This can be reused on multiple pages*/
+
+.label {
+    color: #63A583;
+    font-size: 24px;
+}
+
+.input-box {
+    border-radius: 10px;
+    border: 1px #63A583 solid;
+    height: 38px;
+    margin: 10px;
+    width: 80%;
+    padding: 10px;
+}
+
+.form-btn {
+    background-color: #63A583;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin: 20px;
+    padding: 10px 30px 10px 30px;
+}
+
+.google-hr {
+    border: 1px #63A583 solid;
+    width: 65%; 
+}
+
+.google-btn {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px #63A583 solid;
+    color: #63A583;
+    margin: 10px;
+    padding: 10px 60px 10px 60px;
+}
+
+.google-btn span{
+    position: relative;
+    bottom: 0.4rem;
+    padding: 8px;
+}

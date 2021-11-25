@@ -3,8 +3,8 @@ import '../css/about.css'
 
 function AboutPage(){
     return (
-        <div className="about-container">
-            <div className="about-div">
+        <div className="page-container">
+            <div className="page-div">
                 <div className="article-container">
                     <article className="article-content">
                         <h1 className="about-title">About Us</h1>

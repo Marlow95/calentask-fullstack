@@ -22,7 +22,7 @@ function HomePage(){
             <div className="circle-container">
                 <img className="green-circle" src="/images/Green Circle.png" alt="green-circle-graphic"/>
             </div>
-            <div className="form-container">
+            <div className="signup-container">
                 <form className="signup-form">
                     <label className="label">Email</label>
                     <br />
