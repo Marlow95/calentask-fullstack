@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PrivacyPolicy(){
+function dashBoard(){
     return (
         <div className="page-container">
             <div className="page-div">
@@ -14,4 +14,4 @@ function PrivacyPolicy(){
     )
 }
 
-export default PrivacyPolicy
+export default dashBoard
