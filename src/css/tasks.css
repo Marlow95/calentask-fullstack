@@ -1,10 +1,50 @@
 /*.CSS should be used on complex css pages or pages commonly changed. All classnames should be specific to avoid css collisions and side effects. 
 All of the .CSS pages are linked so a classname on one page can affect another if its the same. For regular pages consider styled components */
-
+.task-container{
+    height: 1200px;
+}
 .task-input{
-    width: 50%;
+    width: 62%;
     margin: 40px 10px 10px 10px;
     padding: 20px;
     border-radius: 10px;
     border: none;
+}
+
+.add-icon{
+    position: absolute;
+    right:330px;
+    top: 100px;
+    z-index: 1;
+}
+
+.task-flex-parent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 25px;
+    height: 1020px;
+}
+
+.task-flex-column-1{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.task-flex-column-2{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 450px;
+    margin-left: 10px;
+}
+
+.task-flex-row{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    margin: 12px;
+    background-color: violet;
 }
