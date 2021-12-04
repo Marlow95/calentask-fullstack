@@ -36,9 +36,12 @@ function HomePage(){
                     <br />
                     <input type="password" placeholder="Password" className="input-box"/>
                     <br />
-                    <label className="label">Full Name</label>
+                    <label className="label">First Name</label>
                     <br />
-                    <input type="text" placeholder="Fullname" className="input-box"/>
+                    <input type="text" placeholder="Firstname" className="input-box"/>
+                    <label className="label">Last Name</label>
+                    <br />
+                    <input type="text" placeholder="Lastname" className="input-box"/>
                     <br />
                     <input type="submit" value="Sign Up" className="form-btn" />
                     <hr className="google-hr"/>
