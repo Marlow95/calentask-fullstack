@@ -1,5 +1,6 @@
 /*.CSS should be used on complex css pages or pages commonly changed. All classnames should be specific to avoid css collisions and side effects. 
 All of the .CSS pages are linked so a classname on one page can affect another if its the same. For regular pages consider styled components */
+
 .task-container{
     height: 1200px;
 }
@@ -29,7 +30,6 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 .task-flex-column-1{
     display: flex;
     flex-direction: column;
-    background-color: white;
     margin-right: 10px;
 }
 
@@ -39,12 +39,82 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     background-color: white;
     width: 450px;
     margin-left: 10px;
+    border-radius: 10px;
 }
 
-.task-flex-row{
+.task-flex-column-2 h4{
+    color: #63A583
+}
+
+.task-flex-column-2 h6{
+    color: #4477DC
+}
+
+/*recently added todo list*/
+.task-flex-column-2 > div > .todo-list-container > .todo-list{
+    background-color: #4477DC;
+    color: white;
+}
+
+.task-boxes-greeting{
     display: flex;
     flex-direction: column;
     width: 700px;
     margin: 12px;
-    background-color: violet;
+    border-radius: 10px;
+}
+
+.task-boxes-greeting button{
+    background-color: #63A583;
+    height: 70px;
+    width: 75%;
+    border-radius: 10px;
+    border: solid white 1px;
+    color: white;
+}
+
+.task-boxes-greeting h1{
+    color: white;
+}
+
+.task-boxes-greeting span{
+    color: #97CDB1;
+}
+
+.task-boxes{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    margin: 12px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.task-boxes hr{
+    width: 75%;   
+}
+
+.task-boxes h4{
+    color: #63A583
+}
+
+.task-boxes h6{
+    color: #4477DC;
+}
+
+
+.todo-list-container{
+    display: flex;
+    justify-content: center;
+}
+
+.todo-list{
+    background-color: #97CDB1;
+    width: 75%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.todo-list[type="checkbox"]:checked{
+    text-decoration: line-through;
 }
