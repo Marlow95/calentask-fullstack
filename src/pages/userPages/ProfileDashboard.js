@@ -1,6 +1,6 @@
 import React from 'react';
 
-function howToPage(){
+function ProfileDashboard(){
     return (
         <div className="page-container">
             <div className="page-div">
@@ -14,4 +14,4 @@ function howToPage(){
     )
 }
 
-export default howToPage
+export default ProfileDashboard

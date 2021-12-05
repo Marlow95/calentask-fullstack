@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Modal from '../main/modal';
-import '../css/tasks.css'
+import '../css/TaskPage.css'
 
 function TaskPage(){
     const myModal = useRef(null)
@@ -37,9 +37,11 @@ function TaskPage(){
                     </div>
                     <div className="task-boxes">
                         <div>
-                            <h4>Upcoming Tasks</h4>
+                            <h3>Upcoming Tasks</h3>
                             <div className="todo-list-container">
-                                <h5 className="todo-list"><input type="checkbox"/>Go to school at 7am. This task is important.</h5>
+                                <h4 className="todo-list">
+                                    <input className="todo-list-input" type="checkbox"/>Go to school at 7am. This task is important.
+                                </h4>
                             </div>
                             <hr/>
                             <h6>Upcoming Tasks</h6>
@@ -47,7 +49,7 @@ function TaskPage(){
                     </div>
                     <div className="task-boxes">
                         <div>
-                            <h4>Completed Tasks</h4>
+                            <h3>Completed Tasks</h3>
                             <hr/>
                             <h6>Completed Tasks</h6>
                         </div>
@@ -55,9 +57,11 @@ function TaskPage(){
                 </div>
                 <div className="task-flex-column-2">
                     <div>
-                        <h4>Recently Added</h4>
+                        <h3>Recently Added</h3>
                         <div className="todo-list-container">
-                            <h5 className="todo-list"><input type="checkbox"/>Go to car wash.</h5>
+                            <h4 className="todo-list">
+                                <input className="todo-list-input" type="checkbox"/>Go to car wash.
+                            </h4>
                         </div>
                         <hr />
                         <h6>Recently Added</h6>

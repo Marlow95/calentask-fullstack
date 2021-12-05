@@ -1,6 +1,6 @@
 import React from 'react';
 
-function dashBoard(){
+function ProfileSettings(){
     return (
         <div className="page-container">
             <div className="page-div">
@@ -14,4 +14,4 @@ function dashBoard(){
     )
 }
 
-export default dashBoard
+export default ProfileSettings
