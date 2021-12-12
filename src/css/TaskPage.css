@@ -31,6 +31,7 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     display: flex;
     flex-direction: column;
     margin-right: 10px;
+    height: 1020px;
 }
 
 .task-flex-column-2{
@@ -40,14 +41,16 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     width: 450px;
     margin-left: 10px;
     border-radius: 10px;
+    height: 1010px;
 }
 
+
 .task-flex-column-2 h3{
-    color: #63A583
+    color: #63A583;
 }
 
 .task-flex-column-2 h6{
-    color: #4477DC
+    color: #4477DC;
 }
 
 /*recently added todo list*/
@@ -56,11 +59,20 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     color: white;
 }
 
+.column-2-task-box-footer >  hr{
+    width: 75%;
+}
+
+.column-2-task-box-footer{
+    position: relative;
+    top: 805px;
+}
+
 .task-boxes-greeting{
     display: flex;
     flex-direction: column;
     width: 700px;
-    margin: 12px;
+    margin: 12px 12px 20px 12px;
     border-radius: 10px;
 }
 
@@ -80,32 +92,6 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 .task-boxes-greeting span{
     color: #97CDB1;
 }
-
-.task-boxes{
-    display: flex;
-    flex-direction: column;
-    width: 700px;
-    margin: 12px;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.task-boxes hr{
-    width: 75%;   
-}
-
-.task-boxes h3{
-    color: #63A583
-}
-
-.task-boxes h4{
-    color: white;
-}
-
-.task-boxes h6{
-    color: #4477DC;
-}
-
 
 .todo-list-container{
     display: flex;

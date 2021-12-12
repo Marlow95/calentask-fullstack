@@ -5,6 +5,13 @@ import Modal from './modal';
 function Nav(){
     const myModal = useRef(null)
     //Classes for login are re-used from homePage.css
+
+    const [isLoggedIn, setIsLoggedIn] = React.useState(false)
+
+    function login(){
+        setIsLoggedIn(prevLog => !prevLog)
+    }
+
     return(
         <nav style={navStyles}>
             <img src="./images/Calen-Task.png" alt="logo" width="150" height="20" style={logoStyles}/>
@@ -22,7 +29,12 @@ function Nav(){
                     <Link style={navLink} to="/about">About </ Link>
                 </li>
             </ul>
-            <button onClick={() => myModal.current.open()} style={modalBtnStyles}>Login</button>
+            { 
+                !isLoggedIn ?
+                <button onClick={() => myModal.current.open()} style={modalBtnStyles}>Login</button> 
+                : <p>{`Hi, Marlow`}</p>
+
+            }
             <Modal ref={myModal}>
                 <h1>Login</h1>
                 <hr />
@@ -39,7 +51,7 @@ function Nav(){
                     <hr className="google-hr" />
                     <button className="google-btn">
                         <img className="google-icon" src="/images/google-icon.png" alt="google"/>
-                        <span>Login w/ Google</span>
+                        <span><a href={login}>Login w/ Google</a></span>
                     </button>
                 </form>
             </Modal>

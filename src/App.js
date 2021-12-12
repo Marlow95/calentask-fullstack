@@ -39,7 +39,7 @@ function App() {
           <Route path="/dasboard">
             <ProfileDashboard />
           </Route>
-          <Route path="profile-settings">
+          <Route path="/profile-settings">
             <ProfileSettings />
           </Route>
         </Switch>

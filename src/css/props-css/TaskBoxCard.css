@@ -1,0 +1,31 @@
+.task-boxes{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 400px;
+    margin: 12px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.task-boxes hr{
+    width: 75%;   
+}
+
+.task-boxes h3{
+    color: #63A583;
+}
+
+.task-boxes h4{
+    color: white;
+}
+
+.task-boxes-footer{
+    position: relative;
+    top: 280px;
+}
+
+.task-boxes-link{
+    text-decoration: none;
+    color: #4477DC;
+}
