@@ -14,7 +14,14 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 
 .add-icon{
     position: absolute;
-    right:330px;
+    right:400px;
+    top: 100px;
+    z-index: 1;
+}
+
+.calender-icon{
+    position: absolute;
+    right:340px;
     top: 100px;
     z-index: 1;
 }
