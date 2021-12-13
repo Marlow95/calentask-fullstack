@@ -13,14 +13,14 @@ function TaskPage(){
         todo: '',
         isCompleted: false
     })
-    
+    console.log(todoInput.id)
 
     function getTodoInput(event){
         const {name, value, type, checked } = event.target
         setTodoInput(prevTodoInput => {
             return {
                 ...prevTodoInput,
-                [name]: type === "checkbox" ? checked : value
+                [name]: type === "checkbox" ? checked : value,
             }
         })
     }
@@ -28,6 +28,7 @@ function TaskPage(){
     function createList(){
         inputCreated = true
     } 
+
     createList()
 
     return (
@@ -35,7 +36,8 @@ function TaskPage(){
             <div className="task-input-container">
                 <input className="task-input" type="text" placeholder="Add Items To Your Todo List Here" onChange={getTodoInput} name="todo" value={todoInput.todo}/>
                 <picture>
-                    <img src="/images/carbon_add.png" alt="add-icon" className="add-icon" onClick={() => myModal.current.open()}/>
+                    <img src="/images/carbon_add.png" alt="add-icon" className="add-icon" onClick={createList}/>
+                    <img src="/images/uit_calender.png" alt="calender-icon" className="calender-icon" onClick={() => myModal.current.open()}/>
                 </picture>
                 <Modal ref={myModal}>
                     <h1>Add Tasks</h1>

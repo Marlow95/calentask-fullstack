@@ -54,12 +54,12 @@ function HomePage(){
 
     return (
         <div className="content-container">
-            <div className="jumbotron-container">
-                <div className="jumbotron">
+            <div className="jumbo-container">
+                <div className="jumbo">
                     <h1>Never, Forget That Important Meeting Ever Again!</h1>
                     <hr />
                     <p>Combine your todo list with your Google Calender and your Mobile Phone, so that you can always remember your most important tasks through out the day!</p>
-                    <button><Link className="jumbotron-link" to="/about">Learn More</Link></button>
+                    <button><Link className="jumbo-link" to="/about">Learn More</Link></button>
                 </div>
             </div>
             <div className="blob-container">

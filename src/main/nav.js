@@ -1,16 +1,24 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom'
-import Modal from './modal';
+import CustomModal from './modal';
 
 function Nav(){
     const myModal = useRef(null)
     //Classes for login are re-used from homePage.css
 
-    const [isLoggedIn, setIsLoggedIn] = React.useState(false)
-
+    let [isLoggedIn, setIsLoggedIn] = React.useState(false)
     function login(){
         setIsLoggedIn(prevLog => !prevLog)
     }
+
+    const [showDropdown, setShowDropdown] = React.useState(false)
+
+    function toggleDropdown(){
+        console.log(showDropdown)
+        setShowDropdown(toggle => !toggle)
+    }
+
+    isLoggedIn = true
 
     return(
         <nav style={navStyles}>
@@ -32,10 +40,27 @@ function Nav(){
             { 
                 !isLoggedIn ?
                 <button onClick={() => myModal.current.open()} style={modalBtnStyles}>Login</button> 
-                : <p>{`Hi, Marlow`}</p>
+                : <div style={profileIcon}>
+                    <img src="/images/Group.png" alt="profile-icon" style={personIcon}/>
+                    {showDropdown ? 
+                    <div>
+                    <img src="/images/dropdown.png" alt="dropdown-profile" style={dropdownIcon} onClick={toggleDropdown}/>
+                    <div style={dropdownMenu}>
+                        <ul style={dropdownContainer}>
+                            <li style={dropdownList}><Link style={link} to="/dashboard">Dashboard</Link></li>
+                            <hr />
+                            <li style={dropdownList}><Link style={link} to="/settings">Settings</Link></li>
+                            <hr />
+                            <li style={dropdownList}>Logout</li>
+                        </ul>
+                    </div>
+                    </div>
+                    : 
+                    <img src="/images/dropdown.png" alt="dropdown-profile" style={dropdownIcon} onClick={toggleDropdown}/>}
+                  </div>
 
             }
-            <Modal ref={myModal}>
+            <CustomModal ref={myModal}>
                 <h1>Login</h1>
                 <hr />
                 <form>
@@ -54,7 +79,7 @@ function Nav(){
                         <span><a href={login}>Login w/ Google</a></span>
                     </button>
                 </form>
-            </Modal>
+            </CustomModal>
         </nav>
     )
 }
@@ -81,6 +106,53 @@ const navList = {
 const navLink = {
     color: '#63A583',
     textDecoration: 'none'
+}
+
+const profileIcon = {
+    display: 'flex',
+    justifyContent: 'space-around'
+}
+
+const personIcon = {
+    position: 'relative',
+    width: '40px',
+    height: '40px',
+    top: '10px',
+    left: '12px'
+}
+
+const dropdownIcon = {
+    position: 'relative',
+    width: '20px',
+    height: '20px',
+    top: '20px',
+    left: '20px'
+}
+
+const dropdownMenu = {
+    backgroundColor: '#63A583',
+    borderRadius: '10px',
+    color: 'white',
+    display: 'flex',
+    height: '150px',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: '50px',
+    width: '200px'
+}
+
+const dropdownContainer = {
+    position: 'relative',
+    right: '20px'
+}
+
+const dropdownList = {
+    listStyle: 'none'
+}
+
+const link = {
+    textDecoration: 'none',
+    color: 'white'
 }
 
 const modalBtnStyles = {

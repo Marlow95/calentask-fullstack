@@ -23,6 +23,10 @@
     padding: 10px 30px 10px 30px;
 }
 
+.form-btn:hover {
+    cursor: pointer;
+}
+
 .google-hr {
     border: 1px #63A583 solid;
     width: 65%; 
