@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+
+.dashboard-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 10px;;
+    background-color: white;
+    height: 400px;
+    width: 1200px;
+}
+
+.profile-pic{
+    border-radius: 100%;
+    margin: 70px;
+}
+
+.profile-default{
+    z-index: -1;
+}
+
+.profile-text{
+ position: relative;
+ bottom: 280px;
+ color: #63A583;
+}
+
+#upload-profile{
+    position: relative;
+    top: 20px;
+    left: 40px;
+}
+
+.profile-about{
+    width: 700px  
+}
+
+.profile-about > h1{
+    color: #63A583;
+}
+
+.profile-about > p{
+    color: #2C5DBE;
+    text-align: left;
+    margin-top: 30px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.lower-dashboard-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard-col-1{
+    width: 750px;
+    height: 700px;
+}
+
+.child-col-greet{
+    background-color: #4477DC;
+    border-radius: 10px;
+    margin-top: 30px;
+    height: 130px;
+    color: White;
+}
+
+.highlight{
+    color: #97CDB1;
+}
+
+.greet-dashboard{
+    padding-top: 20px;
+}
+
+.all-tasks-btn{
+    background-color: #63A583;
+    border: white 1px solid;
+    color: white;
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 20px 20px 0px;
+}
+
+.child-col-upcoming{
+    background-color: white;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.child-col-upcoming h3{
+    color: #63A583;
+    padding-top: 10px;
+}
+
+.upcoming-footer-container{
+    display: flex;
+    justify-content: center;
+}
+
+.upcoming-footer{
+    position: relative;
+    top: 300px;
+    width: 75%;
+}
+
+.child-col-upcoming h6{
+    color: #63A583;
+}
+
+.dashboard-col-2{
+ width: 455px;
+ height: 700px;
+ background-color: white;
+ border-radius: 10px;
+ margin-top: 30px;
+ margin-left: 45px;
+}
+
+
+.dash-col-footer-container{
+    display: flex;
+    justify-content: center;
+}
+
+.dash-col-footer{
+    position: relative;
+    width: 75%;
+    top: 570px;
+}
+
+.dash-col-footer h6{
+    color: #63A583
+}
+
+

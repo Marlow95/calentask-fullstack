@@ -29,7 +29,6 @@ function TaskPage(){
         inputCreated = true
     } 
 
-    createList()
 
     return (
         <div className="task-container">

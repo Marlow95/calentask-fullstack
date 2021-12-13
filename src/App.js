@@ -5,8 +5,8 @@ import HowTo from './pages/HowToPage'
 import About from './pages/AboutPage'
 import TermsOfService from './pages/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy'
-import ProfileDashboard from './pages/userPages/ProfileDashboard'
-import ProfileSettings from './pages/userPages/ProfileSettings'
+import ProfileDashboard from './profile/ProfileDashboard'
+import ProfileSettings from './profile/ProfileSettings'
 import { Switch, Route} from 'react-router-dom'
 import Footer from './main/footer'
 import './App.css';
@@ -34,13 +34,13 @@ function App() {
           <Route path="/terms-of-service">
             <TermsOfService />
           </Route>
-          <Route>
-            <PrivacyPolicy path="/privacy-policy"/>
+          <Route path="/privacy-policy">
+            <PrivacyPolicy />
           </Route>
-          <Route path="/dasboard">
+          <Route path="/dashboard">
             <ProfileDashboard />
           </Route>
-          <Route path="/profile-settings">
+          <Route path="/settings">
             <ProfileSettings />
           </Route>
         </Switch>

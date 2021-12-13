@@ -1,12 +1,12 @@
 import React from 'react';
 
-function ProfileDashboard(){
+function ProfileSettings(){
     return (
         <div className="page-container">
             <div className="page-div">
                 <div className="article-container">
                     <div className="article-content">
-
+                        
                     </div>
                 </div>
             </div>
@@ -14,4 +14,4 @@ function ProfileDashboard(){
     )
 }
 
-export default ProfileDashboard
+export default ProfileSettings

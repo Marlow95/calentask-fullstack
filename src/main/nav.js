@@ -4,7 +4,6 @@ import CustomModal from './modal';
 
 function Nav(){
     const myModal = useRef(null)
-    //Classes for login are re-used from homePage.css
 
     let [isLoggedIn, setIsLoggedIn] = React.useState(false)
     function login(){
@@ -18,6 +17,10 @@ function Nav(){
         setShowDropdown(toggle => !toggle)
     }
 
+    function alertUser(){
+        alert('You need to have an account to access this page')
+    }
+
     isLoggedIn = true
 
     return(
@@ -25,10 +28,14 @@ function Nav(){
             <img src="./images/Calen-Task.png" alt="logo" width="150" height="20" style={logoStyles}/>
             <ul>
                 <li style={navList}>
-                    <Link style={navLink} to="/">Home |</ Link>
+                    {   isLoggedIn ? <Link style={navLink} to="/dashboard">Home |</ Link> 
+                        : <Link style={navLink} to="/">Home |</ Link>
+                    }
                 </li>
                 <li style={navList}>
-                    <Link style={navLink} to="/tasks">Tasks |</ Link>
+                    { isLoggedIn ? <Link style={navLink} to="/tasks">Tasks |</ Link> 
+                        : <Link style={navLink} to="/" onClick={alertUser}>Tasks |</ Link> 
+                    }
                 </li>
                 <li style={navList}>
                     <Link style={navLink} to="/how-to">How To |</ Link>
@@ -61,6 +68,7 @@ function Nav(){
 
             }
             <CustomModal ref={myModal}>
+                {/*form css --- reusable*/}
                 <h1>Login</h1>
                 <hr />
                 <form>
