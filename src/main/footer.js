@@ -6,19 +6,19 @@ function footer(){
         <footer style={footerStyles}>
             <ul>
                 <li style={footerList}>
-                    <Link style={footerLink} to="/">Home |</ Link>
+                    <Link style={footerLink} to="/">Home </ Link>
                 </li>
                 <li style={footerList}>
-                    <Link style={footerLink} to="/tasks">Tasks |</ Link>
+                    <Link style={footerLink} to="/tasks">Tasks </ Link>
                 </li>
                 <li style={footerList}>
-                    <Link style={footerLink} to="/how-to">How To |</ Link>
+                    <Link style={footerLink} to="/how-to">How To </ Link>
                 </li>
                 <li style={footerList}>
-                    <Link style={footerLink} to="/about">About |</ Link>
+                    <Link style={footerLink} to="/about">About </ Link>
                 </li>
                 <li style={footerList}>
-                    <Link style={footerLink} to="/terms-of-service">Terms of Service |</ Link>
+                    <Link style={footerLink} to="/terms-of-service">Terms of Service </ Link>
                 </li>
                 <li style={footerList}>
                     <Link style={footerLink} to="/privacy-policy">Privacy Policy </Link>

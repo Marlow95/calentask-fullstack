@@ -1,13 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useRef} from 'react';
 import { Link } from 'react-router-dom'
-import CustomModal from './modal';
+import Modal from './modal';
+import UserContext from '../UserContext';
 
 function Nav(){
     const myModal = useRef(null)
 
-    let [isLoggedIn, setIsLoggedIn] = React.useState(false)
-    function login(){
-        setIsLoggedIn(prevLog => !prevLog)
+    const {isLoggedIn, setIsLoggedIn} = React.useContext(UserContext)
+    console.log(isLoggedIn)
+
+    function login(event){
+      setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
+      event.preventDefault()
+      myModal.current.close()
     }
 
     const [showDropdown, setShowDropdown] = React.useState(false)
@@ -21,24 +26,22 @@ function Nav(){
         alert('You need to have an account to access this page')
     }
 
-    isLoggedIn = true
-
     return(
         <nav style={navStyles}>
             <img src="./images/Calen-Task.png" alt="logo" width="150" height="20" style={logoStyles}/>
             <ul>
                 <li style={navList}>
-                    {   isLoggedIn ? <Link style={navLink} to="/dashboard">Home |</ Link> 
-                        : <Link style={navLink} to="/">Home |</ Link>
+                    {   isLoggedIn ? <Link style={navLink} to="/dashboard">Home </ Link> 
+                        : <Link style={navLink} to="/">Home </ Link>
                     }
                 </li>
                 <li style={navList}>
-                    { isLoggedIn ? <Link style={navLink} to="/tasks">Tasks |</ Link> 
-                        : <Link style={navLink} to="/" onClick={alertUser}>Tasks |</ Link> 
+                    { isLoggedIn ? <Link style={navLink} to="/tasks">Tasks </ Link> 
+                        : <Link style={navLink} to="/" onClick={alertUser}>Tasks </ Link> 
                     }
                 </li>
                 <li style={navList}>
-                    <Link style={navLink} to="/how-to">How To |</ Link>
+                    <Link style={navLink} to="/how-to">How To </ Link>
                 </li>
                 <li style={navList}>
                     <Link style={navLink} to="/about">About </ Link>
@@ -46,7 +49,8 @@ function Nav(){
             </ul>
             { 
                 !isLoggedIn ?
-                <button onClick={() => myModal.current.open()} style={modalBtnStyles}>Login</button> 
+                <button onClick={()=>myModal.current.open()} style={modalBtnStyles}>Login</button> 
+
                 : <div style={profileIcon}>
                     <img src="/images/Group.png" alt="profile-icon" style={personIcon}/>
                     {showDropdown ? 
@@ -58,7 +62,7 @@ function Nav(){
                             <hr />
                             <li style={dropdownList}><Link style={link} to="/settings">Settings</Link></li>
                             <hr />
-                            <li style={dropdownList}>Logout</li>
+                            <li onClick={login} style={dropdownList}>Logout</li>
                         </ul>
                     </div>
                     </div>
@@ -67,7 +71,7 @@ function Nav(){
                   </div>
 
             }
-            <CustomModal ref={myModal}>
+            <Modal ref={myModal}>
                 {/*form css --- reusable*/}
                 <h1>Login</h1>
                 <hr />
@@ -80,14 +84,14 @@ function Nav(){
                     <br />
                     <input className="input-box" type="password" placeholder="Password"/>
                     <br />
-                    <input className="form-btn" type="submit" value="Login" />
+                    <button className="form-btn" onClick={login}>Login</button>
                     <hr className="google-hr" />
                     <button className="google-btn">
                         <img className="google-icon" src="/images/google-icon.png" alt="google"/>
-                        <span><a href={login}>Login w/ Google</a></span>
+                        <span>Login w/ Google</span>
                     </button>
                 </form>
-            </CustomModal>
+            </Modal>
         </nav>
     )
 }

@@ -6,13 +6,10 @@ function InputCard(props){
             <h4 className="todo-list">
             <input 
                 className="todo-list-input" 
-                type="checkbox" 
-                id="isCompleted" 
-                htmlFor={props.for} 
-                change={props.checked} 
+                type="checkbox"  
                 value={props.value}
-                name={props.name}
-            />{props.renderEvent}
+            />{props.renderEvent}<button onClick={props.delete}>Delete</button>
+            <button>Edit</button>
             </h4>
         </div> 
     )

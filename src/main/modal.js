@@ -2,6 +2,7 @@ import React, {useState, useEffect, useImperativeHandle, forwardRef, useCallback
 import { createPortal } from 'react-dom';
 import "../css/modal.css"
 
+
 const modalElement = document.getElementById('modal-root');
 
 export function Modal({ children,  fade = false, defaultValue = false }, ref){
@@ -25,6 +26,7 @@ export function Modal({ children,  fade = false, defaultValue = false }, ref){
     }, [handleClose, modal])
 
     return createPortal(
+        
         modal ? (
         <div className={`modal ${fade ? 'modal-fade' : ''}`}>
             <div className="modal-overlay" onClick={close} />
