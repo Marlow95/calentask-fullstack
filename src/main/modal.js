@@ -15,11 +15,15 @@ export function Modal({ children,  fade = false, defaultValue = false }, ref){
     }), [close])
 
     const handleClose = useCallback(event => {
-        if (event.keyCode === 27) close()
+        if (event.keyCode === 27){
+            close()
+        } 
     }, [close])
 
     useEffect(() => {
-        if(modal) document.addEventListener('keydown', handleClose, false)
+        if(modal){
+            document.addEventListener('keydown', handleClose, false)
+        }
         return () => {
             document.removeEventListener('keydown', handleClose, false)
         }
