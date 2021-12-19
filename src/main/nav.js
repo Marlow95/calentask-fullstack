@@ -7,23 +7,72 @@ function Nav(){
     const myModal = useRef(null)
 
     const {isLoggedIn, setIsLoggedIn} = React.useContext(UserContext)
-    console.log(isLoggedIn)
 
     function login(event){
       setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
       event.preventDefault()
+      submitPostUsersApi()
       myModal.current.close()
+    }
+
+    function logout(){
+        getLogoutApi()
+        setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
     }
 
     const [showDropdown, setShowDropdown] = React.useState(false)
 
     function toggleDropdown(){
-        console.log(showDropdown)
         setShowDropdown(toggle => !toggle)
     }
 
     function alertUser(){
         alert('You need to have an account to access this page')
+    }
+
+    const [loginInput, setLoginInput] = React.useState({
+        username: '',
+        password: ''
+    })
+
+    function getInputChange(event){
+        const {name, value} = event.target
+        setLoginInput(prevLoginInput => {
+            return {
+                ...prevLoginInput,
+                [name]: value
+            }
+        })
+    }
+
+    function submitPostUsersApi(){
+        fetch('http://localhost:4000/users/login', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: loginInput.username,
+                password: loginInput.password
+            })
+            
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+    }
+
+    function getLogoutApi(){
+        fetch('http://localhost:4000/users/logout', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
     }
 
     return(
@@ -62,7 +111,7 @@ function Nav(){
                             <hr />
                             <li style={dropdownList}><Link style={link} to="/settings">Settings</Link></li>
                             <hr />
-                            <li onClick={login} style={dropdownList}>Logout</li>
+                            <li onClick={logout} style={dropdownList}><span style={link}>Logout</span></li>
                         </ul>
                     </div>
                     </div>
@@ -78,11 +127,11 @@ function Nav(){
                 <form>
                     <label className="label">Username</label>
                     <br />
-                    <input className="input-box" type="username" placeholder="Username"/>
+                    <input className="input-box" type="username" placeholder="Username" name="username" onChange={getInputChange}/>
                     <br />
                     <label className="label">Password</label>
                     <br />
-                    <input className="input-box" type="password" placeholder="Password"/>
+                    <input className="input-box" type="password" placeholder="Password" name="password" onChange={getInputChange}/>
                     <br />
                     <button className="form-btn" onClick={login}>Login</button>
                     <hr className="google-hr" />
@@ -164,7 +213,8 @@ const dropdownList = {
 
 const link = {
     textDecoration: 'none',
-    color: 'white'
+    color: 'white',
+    cursor: 'pointer'
 }
 
 const modalBtnStyles = {
