@@ -8,7 +8,7 @@ function ProfileDashboard(){
             <div className="page-container">
                 <div>
                     <div className="dashboard-container">
-                        <img className="profile-pic-header" src="/images/rec.png" alt="green-background" height="150px" width="1260px"/>
+                        <img className="profile-pic-header" src="/images/rec.png" alt="green-background" height="170px" width="1260px"/>
                         <div className="profile-about">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut elementum justo. 
