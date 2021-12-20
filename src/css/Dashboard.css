@@ -7,6 +7,7 @@
     background-color: white;
     height: 300px;
     width: 1200px;
+    margin-top: 40px;
 }
 
 .profile-pic-header{
@@ -46,12 +47,12 @@
 .lower-dashboard-container{
     display: flex;
     flex-direction: row;
-    margin-top: 40px;
+    margin-top: 70px;
 }
 
 .dashboard-col-1{
     width: 750px;
-    height: 700px;
+    height: 870px;
 }
 
 .child-col-greet{
@@ -81,7 +82,7 @@
 
 .child-col-upcoming{
     background-color: white;
-    height: 450px;
+    height: 590px;
     border-radius: 10px;
 }
 
@@ -106,7 +107,7 @@
 
 .upcoming-footer{
     position: relative;
-    top: 300px;
+    top: 420px;
     width: 75%;
 }
 
@@ -116,7 +117,7 @@
 
 .dashboard-col-2{
  width: 455px;
- height: 740px;
+ height: 887px;
  background-color: white;
  border-radius: 10px;
  margin-top: 30px;
@@ -132,7 +133,7 @@
 .dash-col-footer{
     position: relative;
     width: 75%;
-    top: 570px;
+    top: 740px;
 }
 
 .dash-col-footer h6{
