@@ -1,19 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
-
 .dashboard-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     padding: 30px;
     border-radius: 10px;;
     background-color: white;
-    height: 400px;
+    height: 300px;
     width: 1200px;
 }
 
-.profile-pic{
-    border-radius: 100%;
-    margin: 70px;
+.profile-pic-header{
+    position: relative;
+    right: 30px;
+    bottom: 53px;
 }
 
 .profile-default{
@@ -33,23 +32,21 @@
 }
 
 .profile-about{
-    width: 700px  
-}
-
-.profile-about > h1{
-    color: #63A583;
+    width: 700px;
 }
 
 .profile-about > p{
+    position: relative;
+    left: 450px;
     color: #2C5DBE;
     text-align: left;
-    margin-top: 30px;
-    font-family: 'Work Sans', sans-serif;
+    font-weight: 300px;
 }
 
 .lower-dashboard-container{
     display: flex;
     flex-direction: row;
+    margin-top: 40px;
 }
 
 .dashboard-col-1{
@@ -93,6 +90,15 @@
     padding-top: 10px;
 }
 
+.child-col{
+    margin: 30px;
+}
+
+.child-col-link{
+    text-decoration: none;
+    color: white;
+}
+
 .upcoming-footer-container{
     display: flex;
     justify-content: center;
@@ -110,7 +116,7 @@
 
 .dashboard-col-2{
  width: 455px;
- height: 700px;
+ height: 740px;
  background-color: white;
  border-radius: 10px;
  margin-top: 30px;

@@ -6,15 +6,11 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     text-align: center;
 }
 
-.about-horizontal-rule {
-    background-color: #C4C4C4;
-    border-width: thin;
+.about-paragraph {
+    font-weight: 300px;
+    font-size: 28px;
 }
 
 .swing-graphic {
-    float: right;
-}
-
-.lamp-graphic {
     float: right;
 }

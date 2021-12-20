@@ -35,7 +35,8 @@ const footerStyles = {
     fontSize: '18px',
     padding: '10px',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: '100px'
 }
 
 const footerList = {

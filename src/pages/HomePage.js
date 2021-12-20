@@ -22,10 +22,15 @@ function HomePage(){
             }
         })
     }
+
+    function userSignupStatus(){
+        alert('You have successfully signed up')
+    }
     
 
     function submitSignup(event){
         event.preventDefault()
+        userSignupStatus()
         submitApi()
     }
 

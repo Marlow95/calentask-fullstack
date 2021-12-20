@@ -24,8 +24,9 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 }
 
 .jumbo hr {
-    border: 1px #C4C4C4 solid;
+    border: 1px #4477DC solid;
     border-width: thin;
+    width: 75%;
 }
 
 .jumbo p {
@@ -96,8 +97,9 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     background-color: #4477DC;
     border-radius: 10px;
     color: white;
-    left: 63rem;
+    left: 65rem;
     padding: 10px;
     position: relative;
+    margin-top: 2rem;
     top: 50rem;
 }
