@@ -2,11 +2,11 @@
 All of the .CSS pages are linked so a classname on one page can affect another if its the same. For regular pages consider styled components */
 
 .task-container{
-    height: 1200px;
+    height: 1500px;
 }
 .task-input{
-    width: 62%;
-    margin: 40px 10px 10px 10px;
+    width: 75%;
+    margin: 180px 10px 10px 10px;
     padding: 20px;
     border-radius: 10px;
     border: none;
@@ -14,15 +14,15 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 
 .add-icon{
     position: absolute;
-    right:400px;
-    top: 100px;
+    right:320px;
+    top: 248px;
     z-index: 1;
 }
 
 .calender-icon{
     position: absolute;
-    right:340px;
-    top: 100px;
+    right:250px;
+    top: 247px;
     z-index: 1;
 }
 
@@ -38,7 +38,7 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     display: flex;
     flex-direction: column;
     margin-right: 10px;
-    height: 1020px;
+    height: 1200px;
 }
 
 .task-flex-column-2{
@@ -47,8 +47,9 @@ All of the .CSS pages are linked so a classname on one page can affect another i
     background-color: white;
     width: 450px;
     margin-left: 10px;
+    margin-top: 21px;
     border-radius: 10px;
-    height: 1010px;
+    height: 1100px;
 }
 
 
@@ -72,7 +73,7 @@ All of the .CSS pages are linked so a classname on one page can affect another i
 
 .column-2-task-box-footer{
     position: relative;
-    top: 805px;
+    top: 870px;
 }
 
 .task-boxes-greeting{
