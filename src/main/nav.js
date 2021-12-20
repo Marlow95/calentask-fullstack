@@ -26,10 +26,6 @@ function Nav(){
         setShowDropdown(toggle => !toggle)
     }
 
-    function alertUser(){
-        alert('You need to have an account to access this page')
-    }
-
     const [loginInput, setLoginInput] = React.useState({
         username: '',
         password: ''
@@ -80,14 +76,10 @@ function Nav(){
             <img src="./images/Calen-Task.png" alt="logo" width="150" height="20" style={logoStyles}/>
             <ul>
                 <li style={navList}>
-                    {   isLoggedIn ? <Link style={navLink} to="/dashboard">Home </ Link> 
-                        : <Link style={navLink} to="/">Home </ Link>
-                    }
+                    <Link style={navLink} to="/">Home </ Link>
                 </li>
                 <li style={navList}>
-                    { isLoggedIn ? <Link style={navLink} to="/tasks">Tasks </ Link> 
-                        : <Link style={navLink} to="/" onClick={alertUser}>Tasks </ Link> 
-                    }
+                    <Link style={navLink} to="/tasks">Tasks </ Link> 
                 </li>
                 <li style={navList}>
                     <Link style={navLink} to="/how-to">How To </ Link>

@@ -8,7 +8,7 @@ import TermsOfService from './pages/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import ProfileDashboard from './profile/ProfileDashboard'
 import ProfileSettings from './profile/ProfileSettings'
-import { Switch, Route} from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Footer from './main/footer'
 import UserContext from './UserContext'
 import './App.css';
@@ -25,10 +25,10 @@ function App() {
         <Nav />
           <Switch>
             <Route exact path="/">
-              <HomePage />
+             { isLoggedIn ? <Redirect to="/dashboard" /> :<HomePage /> }
             </Route>
             <Route path="/tasks">
-                <Tasks />
+                { isLoggedIn ? <Tasks /> : <Redirect to="/" /> }
             </Route>
             <Route path="/how-to">
               <HowTo />
@@ -43,10 +43,10 @@ function App() {
               <PrivacyPolicy />
             </Route>
             <Route path="/dashboard">
-              <ProfileDashboard />
+              {!isLoggedIn ? <Redirect to="/" /> : <ProfileDashboard />}
             </Route>
             <Route path="/settings">
-              <ProfileSettings />
+              {!isLoggedIn ? <Redirect to="/" /> : <ProfileSettings />}
             </Route>
           </Switch>
         <Footer />
