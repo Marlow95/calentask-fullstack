@@ -11,10 +11,24 @@ function Nav(){
 
     function login(event){
       event.preventDefault()
+      readCookie()
       submitPostUsersApi()
     }
 
+    function readCookie(){
+        const user = Cookies.get('sessionPersist')
+        if(user){
+        setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
+        myModal.current.close()
+        }
+    }
+    
+    React.useEffect(()=>{
+        readCookie()
+    },[])
+
     function logout(){
+        Cookies.remove('sessionPersist')
         getLogoutApi()
         setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
     }
@@ -57,8 +71,6 @@ function Nav(){
         .then(data => {
             if(data.isSuccess){
                 Cookies.set('sessionPersist', 'fjghhfGDcv56Cs4e89', { expires: 1 })
-                setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
-                myModal.current.close()
             } else {
                 alert('Invalid username/password')
                 return <Redirect to="/" />
