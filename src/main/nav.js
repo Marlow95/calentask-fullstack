@@ -1,7 +1,8 @@
 import React, { useRef} from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Modal from './modal';
 import UserContext from '../UserContext';
+import Cookies from 'js-cookie';
 
 function Nav(){
     const myModal = useRef(null)
@@ -9,10 +10,8 @@ function Nav(){
     const {isLoggedIn, setIsLoggedIn} = React.useContext(UserContext)
 
     function login(event){
-      setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
       event.preventDefault()
       submitPostUsersApi()
-      myModal.current.close()
     }
 
     function logout(){
@@ -55,7 +54,16 @@ function Nav(){
             
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data.isSuccess){
+                Cookies.set('sessionPersist', 'fjghhfGDcv56Cs4e89', { expires: 1 })
+                setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
+                myModal.current.close()
+            } else {
+                alert('Invalid username/password')
+                return <Redirect to="/" />
+            }
+        })
         .catch(err => console.log(err))
     }
 

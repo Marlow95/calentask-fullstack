@@ -1,0 +1,26 @@
+.settings-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings-col-links {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 870px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.settings-col-update-form {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    height: 870px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
