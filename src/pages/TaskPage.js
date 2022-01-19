@@ -26,7 +26,7 @@ function TaskPage(){
     }
 
     function submitPostTodoApi(){
-        fetch('http://localhost:4000/todo', {
+        fetch('http://localhost:4000/api/todo', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -46,7 +46,7 @@ function TaskPage(){
     const [apiData, setApiData] = React.useState([])
 
     function getTodoApiData(){
-        fetch('http://localhost:4000/todo', {
+        fetch('http://localhost:4000/api/todo', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ function TaskPage(){
     }
 
     function deleteTodoApiData(id){
-        fetch(`http://localhost:4000/todo/${id}`, {
+        fetch(`http://localhost:4000/api/todo/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

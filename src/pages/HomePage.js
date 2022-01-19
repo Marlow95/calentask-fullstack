@@ -36,7 +36,7 @@ function HomePage(){
 
     
     function submitApi(){
-        fetch('http://localhost:4000/users/signup', {
+        fetch('http://localhost:4000/api/users/signup', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

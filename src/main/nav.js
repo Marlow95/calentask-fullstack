@@ -11,12 +11,12 @@ function Nav(){
 
     function login(event){
       event.preventDefault()
-      readCookie()
       submitPostUsersApi()
     }
 
-    function readCookie(){
-
+    function loginWithGoogle(event){
+        event.preventDefault()
+        loginWithGoogleApi()
     }
     
     React.useEffect(()=>{
@@ -56,7 +56,7 @@ function Nav(){
     }
 
     function submitPostUsersApi(){
-        fetch('http://localhost:4000/users/login', {
+        fetch('http://localhost:4000/api/users/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -83,7 +83,7 @@ function Nav(){
     }
 
     function getLogoutApi(){
-        fetch('http://localhost:4000/users/logout', {
+        fetch('http://localhost:4000/api/users/logout', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -92,6 +92,10 @@ function Nav(){
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(err => console.log(err))
+    }
+
+    function loginWithGoogleApi(){
+        console.log('It works')
     }
 
     return(
@@ -152,7 +156,7 @@ function Nav(){
                     <hr className="google-hr" />
                     <button className="google-btn">
                         <img className="google-icon" src="/images/google-icon.png" alt="google"/>
-                        <span>Login w/ Google</span>
+                        <span onClick={loginWithGoogle}>Login w/ Google</span>
                     </button>
                 </form>
             </Modal>
