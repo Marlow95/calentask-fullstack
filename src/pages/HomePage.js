@@ -36,18 +36,19 @@ function HomePage(){
 
     
     function submitApi(){
-        fetch('http://localhost:4000/api/users/signup', {
+        fetch('https://localhost:7147/users', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                firstname: signUp.firstname,
-                lastname: signUp.lastname,
-                username: signUp.username,
+                firstName: signUp.firstname,
+                lastName: signUp.lastname,
+                userName: signUp.username,
                 email: signUp.email,
-                password: signUp.password
+                passWord: signUp.password,
+                about: ""
             })
             
         })

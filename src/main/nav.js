@@ -56,20 +56,25 @@ function Nav(){
     }
 
     function submitPostUsersApi(){
-        fetch('http://localhost:4000/api/users/login', {
+        fetch('https://localhost:7147/users/login', {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:3000/',
+                'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Credentials': true
             },
             body: JSON.stringify({
-                username: loginInput.username,
-                password: loginInput.password
+                userName: loginInput.username,
+                passWord: loginInput.password
             })
             
         })
         .then(res => res.json())
-        .then(data => {
+        .then(data => { 
+            
             if(data.isSuccess){
                 Cookies.set('sessionPersist', 'fjghhfGDcv56Cs4e89', { expires: 1 })
                 setIsLoggedIn(prevLoginStatus => !prevLoginStatus)

@@ -11,6 +11,7 @@ import ProfileSettings from './profile/ProfileSettings'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Footer from './main/footer'
 import UserContext from './UserContext'
+import RouterLinks from './constants/RouteLinks'
 import './App.css';
 import './css/reusable/page.css'
 import './css/reusable/form.css'
@@ -24,29 +25,29 @@ function App() {
       <UserContext.Provider value={{isLoggedIn, setIsLoggedIn}}>
         <Nav />
           <Switch>
-            <Route exact path="/">
-             { isLoggedIn ? <Redirect to="/dashboard" /> :<HomePage /> }
+            <Route exact path={RouterLinks.home}>
+             { isLoggedIn ? <Redirect to="/dashboard" /> : <HomePage /> }
             </Route>
-            <Route path="/tasks">
-                { isLoggedIn ? <Tasks /> : <Redirect to="/" /> }
+            <Route path={RouterLinks.tasks}>
+                { isLoggedIn ? <Tasks /> : <Redirect to={RouterLinks.home} /> }
             </Route>
-            <Route path="/how-to">
+            <Route path={RouterLinks.howTo}>
               <HowTo />
             </Route>
-            <Route path="/about">
+            <Route path={RouterLinks.about}>
               <About />
             </Route>
-            <Route path="/terms-of-service">
+            <Route path={RouterLinks.tos}>
               <TermsOfService />
             </Route>
-            <Route path="/privacy-policy">
+            <Route path={RouterLinks.pvypolicy}>
               <PrivacyPolicy />
             </Route>
-            <Route path="/dashboard">
-              {!isLoggedIn ? <Redirect to="/" /> : <ProfileDashboard />}
+            <Route path={RouterLinks.dashboard}>
+              {!isLoggedIn ? <Redirect to={RouterLinks.home} /> : <ProfileDashboard />}
             </Route>
-            <Route path="/settings">
-              {!isLoggedIn ? <Redirect to="/" /> : <ProfileSettings />}
+            <Route path={RouterLinks.settings}>
+              {!isLoggedIn ? <Redirect to={RouterLinks.home} /> : <ProfileSettings />}
             </Route>
           </Switch>
         <Footer />
