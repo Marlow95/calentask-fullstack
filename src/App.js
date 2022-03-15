@@ -46,8 +46,8 @@ function App() {
             <Route path={RouterLinks.dashboard}>
               {!isLoggedIn ? <Redirect to={RouterLinks.home} /> : <ProfileDashboard />}
             </Route>
-            <Route path={RouterLinks.settings}>
-              {!isLoggedIn ? <Redirect to={RouterLinks.home} /> : <ProfileSettings />}
+            <Route path="/settings">
+              {!isLoggedIn ? <Redirect to={RouterLinks.home}/> : <ProfileSettings />}
             </Route>
           </Switch>
         <Footer />

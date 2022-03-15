@@ -26,11 +26,16 @@ function TaskPage(){
     }
 
     function submitPostTodoApi(){
-        fetch('http://localhost:4000/api/todo', {
+        fetch('https://localhost:7147/todo', {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'WWW-Authenticate': 'Bearer',
+                'Access-Control-Allow-Origin': 'http://localhost:3000/',
+                'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Credentials': true
             },
             body: JSON.stringify({
                 description: todoInput.description,
@@ -46,29 +51,50 @@ function TaskPage(){
     const [apiData, setApiData] = React.useState([])
 
     function getTodoApiData(){
-        fetch('http://localhost:4000/api/todo', {
+        fetch('https://localhost:7147/todo', {
             method: 'GET',
+            mode: 'cors',
             headers: {
-                'Content-Type': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'WWW-Authenticate': 'Bearer',
+                'Access-Control-Allow-Origin': 'http://localhost:3000/',
+                'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Credentials': true
             }
         })
         .then(res => res.json())
-        .then(data => setApiData(data))
+        .then(data => {
+            setApiData(data)
+        })
         .catch(err => console.log(err))
     }
 
     function deleteTodoApiData(id){
-        fetch(`http://localhost:4000/api/todo/${id}`, {
-            method: 'DELETE'
+    
+        fetch(`https://localhost:7147/todo/${id}`, {
+            method: 'DELETE',
+            mode: 'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'WWW-Authenticate': 'Bearer',
+                'Access-Control-Allow-Origin': 'http://localhost:3000/',
+                'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Credentials': true
+            }
         })
         .then(res => res.json())
-        .then(data => setApiData(data.filter(data => data.todoId !== id)))
+        .then(data => setApiData(data.filter(data => data.id !== id)))
         .catch(err => console.log(err))
     }
 
+    //UseMemo helps prevent infinite re-renderings
+    const dataReload = React.useMemo(() => apiData, [apiData])
+
     React.useEffect(() => {
         getTodoApiData()
-    },[])
+    },[dataReload])
 
     function createList(event){
         event.preventDefault()
@@ -114,11 +140,11 @@ function TaskPage(){
                         {apiData.map(data => {
                             return(
                                 <InputCard 
-                                id={data.todoId}
-                                key={data.todoId}
+                                id={data.id}
+                                key={data.id}
                                 renderEvent={data.description} //renders input on page 
                                 value={data.isComplete} // sets the value of the checkbox to the bool in state
-                                delete={()=> deleteTodoApiData(data.todoId)}
+                                delete={()=> deleteTodoApiData(data.id)}
                                 />
                             )
                         })}

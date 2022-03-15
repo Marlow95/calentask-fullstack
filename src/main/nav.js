@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom'
 import Modal from './modal';
 import UserContext from '../UserContext';
 import Cookies from 'js-cookie';
+import RouterLinks from "../constants/RouteLinks"
 
 function Nav(){
     const myModal = useRef(null)
@@ -62,6 +63,7 @@ function Nav(){
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'WWW-Authenticate': 'Bearer',
                 'Access-Control-Allow-Origin': 'http://localhost:3000/',
                 'Access-Control-Allow-Headers': '*',
                 'Access-Control-Allow-Credentials': true
@@ -108,16 +110,16 @@ function Nav(){
             <img src="./images/Calen-Task.png" alt="logo" width="150" height="20" style={logoStyles}/>
             <ul>
                 <li style={navList}>
-                    <Link style={navLink} to="/">Home </ Link>
+                    <Link style={navLink} to={RouterLinks.home}>Home </ Link>
                 </li>
                 <li style={navList}>
-                    <Link style={navLink} to="/tasks">Tasks </ Link> 
+                    <Link style={navLink} to={RouterLinks.tasks}>Tasks </ Link> 
                 </li>
                 <li style={navList}>
-                    <Link style={navLink} to="/how-to">How To </ Link>
+                    <Link style={navLink} to={RouterLinks.howTo}>How To </ Link>
                 </li>
                 <li style={navList}>
-                    <Link style={navLink} to="/about">About </ Link>
+                    <Link style={navLink} to={RouterLinks.about}>About </ Link>
                 </li>
             </ul>
             { 
@@ -131,7 +133,7 @@ function Nav(){
                     <img src="/images/dropdown.png" alt="dropdown-profile" style={dropdownIcon} onClick={toggleDropdown}/>
                     <div style={dropdownMenu}>
                         <ul style={dropdownContainer}>
-                            <li style={dropdownList}><Link style={link} to="/dashboard">Dashboard</Link></li>
+                            <li style={dropdownList}><Link style={link} to={RouterLinks.dashboard}>Dashboard</Link></li>
                             <hr />
                             <li style={dropdownList}><Link style={link} to="/settings">Settings</Link></li>
                             <hr />
