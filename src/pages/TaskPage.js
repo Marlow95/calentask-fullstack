@@ -90,11 +90,11 @@ function TaskPage(){
     }
 
     //UseMemo helps prevent infinite re-renderings
-    const dataReload = React.useMemo(() => apiData, [apiData])
+    //const dataReload = React.useMemo(() => apiData, [apiData])
 
     React.useEffect(() => {
         getTodoApiData()
-    },[dataReload])
+    },[])
 
     function createList(event){
         event.preventDefault()

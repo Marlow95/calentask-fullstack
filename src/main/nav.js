@@ -78,7 +78,7 @@ function Nav(){
         .then(data => { 
             
             if(data.isSuccess){
-                Cookies.set('sessionPersist', 'fjghhfGDcv56Cs4e89', { expires: 1 })
+                Cookies.set('sessionPersist', 'fjghhfGDcv56Cs4e89', { expires: 1, sameSite: 'Strict', secure: true})
                 setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
                 myModal.current.close()
             } else {
@@ -88,6 +88,7 @@ function Nav(){
         })
         .catch(err => console.log(err))
     }
+    
 
     function getLogoutApi(){
         fetch('http://localhost:4000/api/users/logout', {
