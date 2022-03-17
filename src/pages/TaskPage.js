@@ -32,7 +32,7 @@ function TaskPage(){
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'WWW-Authenticate': 'Bearer',
+                'Authorization': `Bearer ${localStorage.getItem("user")}`,
                 'Access-Control-Allow-Origin': 'http://localhost:3000/',
                 'Access-Control-Allow-Headers': '*',
                 'Access-Control-Allow-Credentials': true
@@ -57,7 +57,7 @@ function TaskPage(){
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'WWW-Authenticate': 'Bearer',
+                'Authorization': `Bearer ${localStorage.getItem("user")}`,
                 'Access-Control-Allow-Origin': 'http://localhost:3000/',
                 'Access-Control-Allow-Headers': '*',
                 'Access-Control-Allow-Credentials': true
@@ -65,7 +65,9 @@ function TaskPage(){
         })
         .then(res => res.json())
         .then(data => {
+            
             setApiData(data)
+
         })
         .catch(err => console.log(err))
     }
@@ -78,7 +80,7 @@ function TaskPage(){
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'WWW-Authenticate': 'Bearer',
+                'Authorization': `Bearer ${localStorage.getItem("user")}`,
                 'Access-Control-Allow-Origin': 'http://localhost:3000/',
                 'Access-Control-Allow-Headers': '*',
                 'Access-Control-Allow-Credentials': true

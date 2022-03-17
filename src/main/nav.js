@@ -79,6 +79,7 @@ function Nav(){
             
             if(data.isSuccess){
                 Cookies.set('sessionPersist', 'fjghhfGDcv56Cs4e89', { expires: 1, sameSite: 'Strict', secure: true})
+                localStorage.setItem("user", data.token)
                 setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
                 myModal.current.close()
             } else {
