@@ -31,7 +31,7 @@ function Nav(){
 
     function logout(){
         Cookies.remove('sessionPersist')
-        getLogoutApi()
+        localStorage.removeItem("user")
         setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
     }
 
@@ -87,19 +87,6 @@ function Nav(){
                 return <Redirect to="/" />
             }
         })
-        .catch(err => console.log(err))
-    }
-    
-
-    function getLogoutApi(){
-        fetch('http://localhost:4000/api/users/logout', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
         .catch(err => console.log(err))
     }
 

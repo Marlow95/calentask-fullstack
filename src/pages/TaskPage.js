@@ -65,7 +65,7 @@ function TaskPage(){
         })
         .then(res => res.json())
         .then(data => {
-            
+
             setApiData(data)
 
         })
@@ -91,13 +91,12 @@ function TaskPage(){
         .catch(err => console.log(err))
     }
 
-    //UseMemo helps prevent infinite re-renderings
-    //const dataReload = React.useMemo(() => apiData, [apiData])
-
     React.useEffect(() => {
-        getTodoApiData()
-    },[])
 
+        getTodoApiData()
+        
+    },[apiData.length])
+    
     function createList(event){
         event.preventDefault()
         submitPostTodoApi()
@@ -115,7 +114,7 @@ function TaskPage(){
                     value={todoInput.description}/>
                 </form>
                 <picture>
-                    <img src="/images/carbon_add.png" alt="add-icon" className="add-icon" onClick={createList}/>
+                    <img src="/images/carbon_add.png" alt="add-icon" className="add-icon" onClick={createList} />
                     <img src="/images/uit_calender.png" alt="calender-icon" className="calender-icon" onClick={() => myModal.current.open()}/>
                 </picture>
                 <Modal ref={myModal}>
