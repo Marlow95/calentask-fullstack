@@ -84,7 +84,12 @@ function TaskPage(){
             }
         })
         .then(res => res.json())
-        .then(data => setApiData(data))
+        .then(data => {
+            //Users can only see there own todo posts
+            const user = localStorage.getItem("userId")
+            const userData = data.filter(data => data.userId === user)
+            setApiData(userData)
+        })
         .catch(err => console.log(err))  
     },[])
     
