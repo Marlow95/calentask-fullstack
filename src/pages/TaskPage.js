@@ -41,7 +41,8 @@ function TaskPage(){
             },
             body: JSON.stringify({
                 description: todoInput.description,
-                isComplete: todoInput.isComplete
+                isComplete: todoInput.isComplete,
+                userId: localStorage.getItem("userId")
             })
             
         })
@@ -85,7 +86,7 @@ function TaskPage(){
         .then(res => res.json())
         .then(data => setApiData(data))
         .catch(err => console.log(err))  
-    },[apiData])
+    },[])
     
     function createList(event){
         event.preventDefault()
