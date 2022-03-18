@@ -52,7 +52,6 @@ function TaskPage(){
     }
 
     function deleteTodoApiData(id){
-    
         fetch(`https://localhost:7147/todo/${id}`, {
             method: 'DELETE',
             mode: 'cors',
@@ -68,7 +67,11 @@ function TaskPage(){
         .then(res => res.json())
         .then(data => setApiData(data.filter(data => data.id !== id)))
         .catch(err => console.log(err))
+        setChange(prev => prev - 1)
     }
+
+    //Helps prevent infinite loop
+    const [change, setChange] = React.useState(1)
 
     React.useEffect(() => {
         fetch('https://localhost:7147/todo', {
@@ -91,10 +94,11 @@ function TaskPage(){
             setApiData(userData)
         })
         .catch(err => console.log(err))  
-    },[])
+    },[change])
     
     function createList(event){
         event.preventDefault()
+        setChange(prev => prev + 1)
         submitPostTodoApi()
     } 
 
