@@ -13,8 +13,6 @@ function TaskPage(){
         isComplete: false
     })
 
-    console.log(todoInput.description)
-
     function getTodoInput(event){
         const {name, value, type, checked } = event.target
         setTodoInput(prevTodoInput => {
@@ -24,6 +22,10 @@ function TaskPage(){
             }
         })
     }
+
+
+    //Api data is stored here
+    const [apiData, setApiData] = React.useState([])
 
     function submitPostTodoApi(){
         fetch('https://localhost:7147/todo', {
@@ -48,30 +50,6 @@ function TaskPage(){
         .catch(err => console.log(err))
     }
 
-    const [apiData, setApiData] = React.useState([])
-
-    function getTodoApiData(){
-        fetch('https://localhost:7147/todo', {
-            method: 'GET',
-            mode: 'cors',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem("user")}`,
-                'Access-Control-Allow-Origin': 'http://localhost:3000/',
-                'Access-Control-Allow-Headers': '*',
-                'Access-Control-Allow-Credentials': true
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-
-            setApiData(data)
-
-        })
-        .catch(err => console.log(err))
-    }
-
     function deleteTodoApiData(id){
     
         fetch(`https://localhost:7147/todo/${id}`, {
@@ -92,10 +70,22 @@ function TaskPage(){
     }
 
     React.useEffect(() => {
-
-        getTodoApiData()
-        
-    },[apiData.length])
+        fetch('https://localhost:7147/todo', {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("user")}`,
+                'Access-Control-Allow-Origin': 'http://localhost:3000/',
+                'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Credentials': true
+            }
+        })
+        .then(res => res.json())
+        .then(data => setApiData(data))
+        .catch(err => console.log(err))  
+    },[apiData])
     
     function createList(event){
         event.preventDefault()
