@@ -20,7 +20,7 @@ function ProfileDashboard(){
                     <div className="lower-dashboard-container">
                         <div className="dashboard-col-1">
                             <div className="child-col-greet">
-                                <h2 className="greet-dashboard">Welcome Marlow</h2>
+                                <h2 className="greet-dashboard">Welcome { localStorage.getItem("firstnameOfUser") }</h2>
                                 <h2>You’ve Got <span className="highlight">4 Tasks</span> To Complete <span className="highlight">By 10pm</span></h2>
                             </div>
                             <div className="child-col">

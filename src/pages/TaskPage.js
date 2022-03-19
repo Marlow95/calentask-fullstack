@@ -51,6 +51,8 @@ function TaskPage(){
         .catch(err => console.log(err))
     }
 
+    const [onDelete, setOnDelete] = React.useState(false)
+
     function deleteTodoApiData(id){
         fetch(`https://localhost:7147/todo/${id}`, {
             method: 'DELETE',
@@ -67,11 +69,13 @@ function TaskPage(){
         .then(res => res.json())
         .then(data => setApiData(data.filter(data => data.id !== id)))
         .catch(err => console.log(err))
-        setChange(prev => prev - 1)
+        setOnDelete(!false)
     }
 
     //Helps prevent infinite loop
-    const [change, setChange] = React.useState(1)
+    const [change, setChange] = React.useState(false)
+    const changeEvent = React.useMemo(() => change, [change])
+    const deleteEvent = React.useMemo(() => onDelete, [onDelete])
 
     React.useEffect(() => {
         fetch('https://localhost:7147/todo', {
@@ -94,11 +98,11 @@ function TaskPage(){
             setApiData(userData)
         })
         .catch(err => console.log(err))  
-    },[change])
+    },[changeEvent, deleteEvent])
     
     function createList(event){
         event.preventDefault()
-        setChange(prev => prev + 1)
+        setChange(!false)
         submitPostTodoApi()
     } 
 

@@ -33,6 +33,7 @@ function Nav(){
         Cookies.remove('sessionPersist')
         localStorage.removeItem("user")
         localStorage.removeItem("userId")
+        localStorage.removeItem("firstnameOfUser")
         setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
     }
 
@@ -82,6 +83,7 @@ function Nav(){
                 Cookies.set('sessionPersist', 'fjghhfGDcv56Cs4e89', { expires: 1, sameSite: 'Strict', secure: true})
                 localStorage.setItem("user", data.token)
                 localStorage.setItem("userId", data.id)
+                localStorage.setItem("firstnameOfUser", data.firstName)
                 setIsLoggedIn(prevLoginStatus => !prevLoginStatus)
                 myModal.current.close()
             } else {
