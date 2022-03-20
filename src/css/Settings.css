@@ -12,6 +12,30 @@
     border-radius: 10px;
     margin-right: 30px;
     margin-top: 30px;
+    padding-top: 10px;
+}
+
+.settings-col-links h2{
+    color: #63A583;
+}
+
+.settings-col-links li{
+    list-style: none;
+}
+
+.btn-links{
+    text-decoration: none;
+    color: white;
+}
+
+.settings-col-links > ul > button{
+    background-color: #4477DC;
+    padding:  8px;
+    border: none;
+    border-radius: 10px;
+    width: 75%;
+    position: relative;
+    right: 15px;
 }
 
 .settings-col-update-form {
@@ -23,4 +47,31 @@
     border-radius: 10px;
     margin-left: 30px;
     margin-top: 30px;
+    padding-top: 10px;
+}
+
+.settings-col-update-form label{
+    color: #63A583;
+    font-size: 24;
+    font-family: SeoulHangang;
+
+}
+
+.settings-col-update-form input{
+    width: 75%;
+    border-radius: 10px;
+    border: 2px solid #63A583;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.settings-col-update-form button{
+    background-color: #4477DC;
+    color: white;
+    border: none;
+    width: 10%;
+    height: 10%;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
 }

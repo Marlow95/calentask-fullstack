@@ -127,9 +127,9 @@ function Nav(){
                     <div style={dropdownMenu}>
                         <ul style={dropdownContainer}>
                             <li style={dropdownList}><Link style={link} to={RouterLinks.dashboard}>Dashboard</Link></li>
-                            <hr />
+                            <hr style={{color: 'white'}}/>
                             <li style={dropdownList}><Link style={link} to="/settings">Settings</Link></li>
-                            <hr />
+                            <hr style={{color: 'white'}}/>
                             <li onClick={logout} style={dropdownList}><span style={link}>Logout</span></li>
                         </ul>
                     </div>

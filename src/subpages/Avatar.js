@@ -2,15 +2,19 @@ import React from 'react'
 
 function Avatar(){
 
-    const [formData, setFormData] = React.useState('')
+    const [formData, setFormData] = React.useState([])
 
     function postImageUploadApi(){
-        const form = new FormData(formData)
-        form.append('profilePic', form)
-        fetch('http://localhost:4000/api/imageUpload', {
+        const form = new FormData()
+        form.append('imageFile', formData)
+        console.log(form)
+        fetch('https://localhost:4620/api/fileUpload', {
             method: 'POST',
+            mode: 'cors',
             headers: {
-                'Content-Type': 'multipart/form-data'
+                'Accept': 'multipart/form-data',
+                'Content-Type': 'multipart/form-data',
+                'Access-Control-Allow-Origin': 'http://localhost:3000/'
             },
             body: form
         })
@@ -18,6 +22,7 @@ function Avatar(){
         .then(data => console.log(data))
         .catch(err => console.log(err))
     }
+
 
     function getImageUpload(event){
         const {name, files} = event.target
@@ -40,10 +45,11 @@ function Avatar(){
             <form>
                 <label>Upload your profile picture</label>
                 <br />
-                <input type="file" name="profilePic" value={formData} onChange={getImageUpload}/>
+                <input type="file" name="imageFile" onChange={getImageUpload}/>
                 <br />
                 <button onClick={uploadImage}>Upload</button>
             </form>
+            {formData[0]}
         </div>
     )
 }

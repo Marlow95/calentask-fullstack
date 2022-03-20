@@ -131,7 +131,7 @@ function TaskPage(){
                 <div className="task-flex-column-1">
                     <div className="task-boxes-greeting">
                         <div>
-                            <h1>You’ve Got <span>4 Tasks</span> To Complete <span>By 10pm</span></h1>
+                            <h1>You’ve Got <span>{apiData.length} Tasks</span> To Complete <span>By 10pm</span></h1>
                             <button><h2>All Tasks</h2></button>
                         </div>
                     </div>

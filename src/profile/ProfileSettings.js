@@ -21,15 +21,26 @@ function ProfileSettings(){
                     </div>
                     <div className="settings-row">
                         <div className="settings-col-links">
+                            <h2>Configuration</h2>
+                            <hr className="google-hr"/>
+
                             <ul>
-                                <li><Link to="/settings/settings-update">Settings</Link></li>
-                                <li><Link to="/settings/avatar">Avatar</Link></li>
+                                <button>
+                                    <li><Link className="btn-links" to="/settings/">Settings</Link></li>
+                                </button>
+
+                                <br />
+                                <br />
+
+                                <button>
+                                    <li><Link className="btn-links" to="/settings/avatar">Avatar</Link></li>
+                                </button>
                             </ul>
 
                         </div>
                         <div className="settings-col-update-form">
                             <Switch>
-                                <Route path="/settings/settings-update">
+                                <Route exact path="/settings/">
                                     <Settings/>
                                 </Route>
                                 <Route path="/settings/avatar">
